@@ -15,4 +15,8 @@
   * [Ansible and Vagrant](notes/ansible_vagrant.md)
   * [CI - 设置Jinkins](notes/continue_integration.md)
   * [io 与 引用透明](notes/io_referential_transparency.md)
+  * [Scala101](notes/scala101.md)
   * [Functional Programming](notes/functional_programming.md)
+
+* [Old Blog](http://zhpooer.github.io/)
+* [Resume](http://bobzhangwz.github.io/)

@@ -167,7 +167,6 @@ So it won't break the OCP law.
 3. Let's use it.
 ```
 People("bob").walk
-
 def startWalk[T](t: T)(implicit walker: Walker[T]) = println(t.walk)
 startWalk(Animal("dog"))
 startWalk(People("lili"))
