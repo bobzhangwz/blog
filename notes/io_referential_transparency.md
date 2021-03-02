@@ -20,7 +20,7 @@
 
 ### 这是不是纯函数
 
-```
+```scala
 val sum = function(a, b) {
   console.log(`$a + $b = ` + (a + b))
   a + b
@@ -66,7 +66,7 @@ val divide: Int => Double = (a) => {
 
 ### Option / Either
 
-```
+```scala
 def readInt1: Either[Error, Int] = Right(1)
 def readInt2: Either[Error, Int] = Right(2)
 
@@ -82,7 +82,7 @@ for {
 
 ---
 
-```
+```scala
 case class Player(name: String, score: Int)
 
 def contest(p1: Player, p2: Player): Unit = {
@@ -99,7 +99,7 @@ def contest(p1: Player, p2: Player): Unit = {
 
 ### After refactor
 
-```
+```scala
 def winner(p1: Player, p2: Player): Option[Player] = {
   if(p1.score > p2.score) Some(p1)
   else if(p2.score > p1.score) Some(p2)
@@ -116,7 +116,7 @@ def contest(p1, p2): Unit = winner(p1, p2) match {
 
 ### More refactor
 
-```
+```scala
 def winnerMsg(p: Option[Player]): String =
   p.map(l => s"${p.player} is a winner").getOrElse("it's a draw")
 ```
@@ -131,7 +131,7 @@ def winnerMsg(p: Option[Player]): String =
 
 ### New abstraction for IO
 
-```
+```scala
 trait IO { def run: Unit }
 def PrintLn(msg: String): IO = {
   new IO { def run = println(msg) }
@@ -146,7 +146,7 @@ contest(p1, p2).run
 
 ### 如何用IO 连续执行两次?
 
-```
+```scala
 println(10)
 println(10)
 ```
@@ -155,7 +155,7 @@ println(10)
 
 ### Evolution of IO monad(new编程范式)
 
-```
+```scala
 sealed trait IO[A] { self =>
   def run: A
   def map[B](f: A => B): IO[B] = new IO { def run = f(self.run) }
@@ -170,7 +170,7 @@ object IO {
 
 ---
 
-```
+```scala
 val readLine: IO[String] = IO { Stdin.readLine }
 def putLine(msg: String): IO[Unit] = IO { println(msg) }
 
@@ -186,7 +186,7 @@ program.run
 
 ---
 
-```
+```scala
 def forever[A, B](a: IO[A]): IO[B] = {
   lazy val t: IO[B] = forever(a)
   a.flatMap(_ => t)

@@ -1,4 +1,5 @@
 * Artical
+  * [0基础搭建博客](docs/docisify.md)
   * [Architecture!?](docs/3_tier_arch.md)
   * [Introduce typeclass](docs/introduce_typeclass.md)
   * [Manjaro + Xmonad 入坑指南](docs/mydotfile.md)

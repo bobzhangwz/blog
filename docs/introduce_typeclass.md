@@ -260,7 +260,7 @@ import cats.syntax.show._ // import the all syntax for show
 
 Cats also provide some other instances for other type, such as `Option`, `Either` and `Double`, we can import it one by one.
 
-```
+```scala
 import cats.instances.option._
 import cats.instances.either._
 import cats.instances.bigInt._

@@ -22,7 +22,7 @@ When we say `software` vs `hardware`, the `soft` indicate the Flexibility which 
 
 For that goal, so the software should be much more soft, in other words, it should be easily be changed for the different business requirements.
 
-The cost for every change should fixed. But in some system, the code for change will be higher and higher with the growth of the feature.
+The cost for every change should fixed. But in some system, the cost for change will be higher and higher with the growth of the feature.
 
 ### Which dimension is important?
 
@@ -87,19 +87,36 @@ Class Ops {
  def ops2
  def ops3
 }
-class User1 { ops.ops1 }
-class User2 { ops.ops2 }
-class User3 { ops.ops3 }
+class User1(ops: Ops) {
+  ops.ops1
+}
+class User2(ops: Ops) { ops.ops2 }
+class User3(ops: Ops) { ops.ops3 }
 ```
 
 According to the ISP, ideally, `user1` should depend on the `ops1` interface, given we don't want make the `User1` to recompile when change `Ops` implementation.
 This principle can guide us to build a better library.
 
+```
+interface Ops1 { def ops1 }
+
+class Ops implement Ops1{
+ def ops1
+ def ops2
+ def ops3
+}
+
+class User1(ops: Ops1) {
+  ops.ops1
+}
+
+```
+
 Following the typeclass example, the `printPeople` function can be never re-compiled, whatever the `Man` is.
 
 ```
 val p = Man(name, gender)
-def printPeople[T](man: T, show: Show[T]): String = man.show
+def printPeople[T: Show](man: T): String = man.show
 ```
 
 ### DIP - dependency inversion
