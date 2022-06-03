@@ -13,6 +13,7 @@
     * [Prometheus Exporter 之 JMX Exporter](docs/prometheus_jmx_exporter.md)
 
 * Notes
+  * [GoPass](notes/go_pass.md)
   * [软件开发](notes/software_developing.md)
   * [Ansible and Vagrant](notes/ansible_vagrant.md)
   * [CI - 设置Jinkins](notes/continue_integration.md)
