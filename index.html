@@ -7,7 +7,9 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="./_media/favicon.ico"/>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"> -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/docsify/4.12.2/themes/vue.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
 </head>
 <body>
   <div id="app">Welcome to bo's world</div>
@@ -16,14 +18,19 @@
    window.$docsify = {
      name: '拾遗',
      loadSidebar: true,
-     subMaxLevel: 3,
      repo: 'https://github.com/bobzhangwz',
+     toc: {
+       tocMaxLevel: 3,
+       target: 'h2, h3, h4'
+     },
      alias: {
        '/.*/_sidebar.md': '/_sidebar.md'
      }
    }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.12.2/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify-plugin-toc"></script>
 </body>
 </html>
