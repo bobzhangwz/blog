@@ -13,16 +13,20 @@
 </head>
 <body>
   <div id="app">Welcome to bo's world</div>
-
   <script>
    window.$docsify = {
-     name: '拾遗',
+     name: '编码拾遗',
      loadSidebar: true,
-     repo: 'https://github.com/bobzhangwz',
+     auto2top: true,
+     onlyCover: false,
+     maxLevel: 4,
+     subMaxLevel: 2,
      toc: {
        tocMaxLevel: 3,
        target: 'h2, h3, h4'
      },
+     repo: 'https://github.com/bobzhangwz',
+     coverpage: './_coverpage.md',
      alias: {
        '/.*/_sidebar.md': '/_sidebar.md'
      }
